@@ -20,7 +20,7 @@
 .signal   { fill:rgb(224,224,224); stroke:tomato;           stroke-width:3 ; visibility:hidden; } 
 .pntarm   {                        stroke:black;            stroke-width:1  } 
 .control  {                        stroke:black;            stroke-width:1 ; visibility:hidden; } 
-.lscliff  { fill:brown;            stroke:brown;            stroke-width:6; } 
+.platform { fill:brown;            stroke:brown;            stroke-width:6; } 
 .break    { fill:brown             stroke:brown;            stroke-width:4; visibility:hidden; } 
 
 @media print {
@@ -37,9 +37,7 @@ You can use it like:
 <div class="page-break"></div>
 <div>...like so</div>
 -->
-
 </style>
-
 
 <title> HMRS Iron Hill </title>
 </head>
@@ -76,7 +74,7 @@ You can use it like:
 <!-- t3  -->
 
    <circle              cx="340"  cy=" 55" r="05" class="break" /> 
-   <text                 x="340"   y=" 55"        class="idbrk"  >k62</text>
+   <text                 x="340"   y=" 55"        class="idbrk"  >k186</text>
   
     <path d="
 
@@ -90,6 +88,7 @@ You can use it like:
         L 373  55
         " class="trackb"
     />
+    <line               x1="250" y1="165" x2="200" y2="195" class="platform" />
     <text                x="200"  y=" 50"         class="idtrk"   >t3</text>
     <text                x="235"  y=" 50"         class="idctl"   >c28</text>
     <text                x="250"  y="200"         class="idtrk"   >t3</text>
@@ -97,7 +96,7 @@ You can use it like:
 <!-- t5  -->
  
    <circle              cx="380"  cy="030" r="05" class="break" /> 
-   <text                 x="380"   y=" 30"        class="idbrk"  >k63</text>
+   <text                 x="380"   y=" 30"        class="idbrk"  >k187</text>
    
      <path d="
         M 400  30
@@ -120,7 +119,7 @@ You can use it like:
 <!-- t6  -->
 
    <circle              cx="200"  cy="250" r="05" class="break" /> 
-   <text                 x="200"   y="250"        class="idbrk"  >k64</text>
+   <text                 x="200"   y="250"        class="idbrk"  >k188</text>
   
     <path d="
         M 200 250
@@ -135,16 +134,15 @@ You can use it like:
 
     <text                x="200"   y=" 22"        class="idtrk"   >t6</text>
     <circle id="id_c12" cx="220"  cy=" 22" r="10" class="control" />
-    <text                x="220"   y=" 22"        class="idbrk"  >k65</text>
     <text                x="235"   y=" 22"        class="idctl"   >c12</text>
 
 <!--    
   up ramp
 -->
     <circle              cx="570"  cy="205" r="05" class="break" /> 
-    <text                 x="570"   y="205"        class="idbrk"  >k66</text>
+    <text                 x="570"   y="205"        class="idbrk"  >k190</text>
     <circle              cx="353"  cy="322" r="05" class="break" /> 
-    <text                 x="353"   y="322"        class="idbrk"  >k67</text>
+    <text                 x="353"   y="322"        class="idbrk"  >k191</text>
 
     <path d="
         M 592 205
@@ -155,8 +153,8 @@ You can use it like:
     <text                x="515"  y="219"         class="idtrk"   >t9</text>
     <text                x="535"  y="219"         class="idctl"   >c19</text>
 
-    <text                x="580"  y="195"         class="idpnt"   >x24</text> 
-    <text                x="565"  y="220"         class="idpnt"   >x25</text>
+    <text                x="580"  y="195"         class="idpnt"   >x162</text> 
+    <text                x="565"  y="220"         class="idpnt"   >x163</text>
 <!--    
   down ramp (tunnel)
 -->
@@ -179,9 +177,9 @@ You can use it like:
     <text                x="280"   y="230"        class="idctl"   >c18</text>    
 
     <circle              cx="622"  cy="322" r="05" class="break" /> 
-    <text                 x="622"   y="322"        class="idbrk"  >k68</text>
+    <text                 x="622"   y="322"        class="idbrk"  >k192</text>
 <!--    
-  point arm x55 x57
+  point arm x179 x181
 -->
     <path d="
         M 350  75  L 400  30
@@ -191,13 +189,13 @@ You can use it like:
   passing loop
 -->  
     <circle              cx="460"  cy="175" r="05" class="break" /> 
-    <text                 x="460"   y="175"        class="idbrk"  >k69</text>
+    <text                 x="460"   y="175"        class="idbrk"  >k193</text>
     <circle              cx="460"  cy="195" r="05" class="break" /> 
-    <text                 x="460"   y="195"        class="idbrk"  >k70</text>
+    <text                 x="460"   y="195"        class="idbrk"  >k194</text>
     <circle              cx="343"  cy="175" r="05" class="break" /> 
-    <text                 x="343"   y="175"        class="idbrk"  >k71</text>
+    <text                 x="343"   y="175"        class="idbrk"  >k195</text>
     <circle              cx="343"  cy="195" r="05" class="break" /> 
-    <text                 x="343"   y="195"        class="idbrk"  >k72</text>
+    <text                 x="343"   y="195"        class="idbrk"  >k196</text>
 
     <path d="
         M 300  175
@@ -212,16 +210,16 @@ You can use it like:
     <text                x="400"  y="194"         class="idtrk"   >t2</text>
     <text                x="425"  y="194"         class="idctl"   >c11</text>
 
-    <text                x="295"  y="171"         class="idpnt"   >x60</text>
-    <text                x="295"  y="200"         class="idpnt"   >x61</text>
+    <text                x="295"  y="171"         class="idpnt"   >x184</text>
+    <text                x="295"  y="200"         class="idpnt"   >x185</text>
 
-    <text                x="465"  y="171"         class="idpnt"   >x58</text>
-    <text                x="465"  y="200"         class="idpnt"   >x59</text>
+    <text                x="465"  y="171"         class="idpnt"   >x182</text>
+    <text                x="465"  y="200"         class="idpnt"   >x183</text>
 <!--    
   dead end down ramp t4
 -->
     <circle              cx="470"  cy="150" r="05" class="break" /> 
-    <text                 x="470"   y="150"        class="idbrk"  >k73</text>
+    <text                 x="470"   y="150"        class="idbrk"  >k197</text>
 
     <path d="
         M 525  175
@@ -232,8 +230,8 @@ You can use it like:
     <text                x="400"  y="142"         class="idtrk"   >t4</text>
     <text                x="425"  y="142"         class="idctl"   >c13</text>
 
-    <text                x="495"  y="190"         class="idpnt"   >x20</text>
-    <text                x="495"  y="155"         class="idpnt"   >x21</text>
+    <text                x="495"  y="190"         class="idpnt"   >x158</text>
+    <text                x="495"  y="155"         class="idpnt"   >x159</text>
 
 <!--    
   mine sidings
@@ -250,23 +248,23 @@ You can use it like:
     <text                 x="575"  y="155"         class="idtrk"   >t7</text>
     <text                 x="600"  y="150"         class="idctl"   >c35</text>  
     <circle              cx="570" cy="169" r="05"  class="break" /> 
-    <text                 x="570"  y="169"         class="idbrk"   >k74</text>
+    <text                 x="570"  y="169"         class="idbrk"   >k198</text>
     <circle              cx="730" cy=" 55" r="05"  class="break" /> 
-    <text                 x="730"  y=" 55"         class="idbrk"   >k75</text>
+    <text                 x="730"  y=" 55"         class="idbrk"   >k199</text>
     <circle              cx="730" cy=" 80" r="05"  class="break" /> 
-    <text                 x="730" y="80"          class="idbrk"    >k76</text>
+    <text                 x="730" y="80"          class="idbrk"    >k200</text>
     <circle              cx="730" cy="110" r="05"  class="break" /> 
-    <text                 x="730" y="110"          class="idbrk"   >k77</text>
+    <text                 x="730" y="110"          class="idbrk"   >k201</text>
     <circle              cx="730" cy="150" r="05"  class="break" /> 
-    <text                 x="730"  y="150"         class="idbrk"   >k78</text>
+    <text                 x="730"  y="150"         class="idbrk"   >k202</text>
     <circle              cx="730" cy="190" r="05"  class="break" /> 
-    <text                 x="730"  y="190"         class="idbrk"   >k79</text>
+    <text                 x="730"  y="190"         class="idbrk"   >k203</text>
     <circle              cx="730" cy="215" r="05"  class="break" /> 
-    <text                 x="730"  y="215"         class="idbrk"   >k80</text>
+    <text                 x="730"  y="215"         class="idbrk"   >k204</text>
 
     
-    <text                x="555"  y="165"         class="idpnt"   >x22</text>
-    <text                x="535"  y="195"         class="idpnt"   >x23</text>
+    <text                x="555"  y="165"         class="idpnt"   >x160</text>
+    <text                x="535"  y="195"         class="idpnt"   >x161</text>
 
     <text                x="800"  y=" 48"         class="idtrk"   >t43</text>
     <text                x="800"  y=" 76"         class="idtrk"   >t44</text>
@@ -283,9 +281,9 @@ You can use it like:
   town sidings
 -->     
     <circle              cx="300"  cy="100" r="05" class="break" /> 
-    <text                 x="300"   y="100"        class="idbrk"   >k81</text>
+    <text                 x="300"   y="100"        class="idbrk"   >k205</text>
     <circle              cx="280"  cy="125" r="05" class="break" /> 
-    <text                 x="2830"  y="125"        class="idbrk"   >k82</text>
+    <text                 x="283"  y="125"         class="idbrk"   >k189</text>
 
     <path d="
         M 350   75  L 325  100  L 150  100
@@ -305,35 +303,35 @@ You can use it like:
   points & directions
 -->     
 
-   <text x="375"  y=" 24" class="idpnt" >x54</text>
-   <text x="387"  y=" 52" class="idpnt" >x55</text>
+   <text x="375"  y=" 24" class="idpnt" >x178</text>
+   <text x="387"  y=" 52" class="idpnt" >x179</text>
 
-   <text x="340"  y=" 50" class="idpnt" >x56</text>
-   <text x="365"  y=" 71" class="idpnt" >x57</text>
+   <text x="340"  y=" 50" class="idpnt" >x180</text>
+   <text x="365"  y=" 71" class="idpnt" >x181</text>
 
-   <text x="301"  y=" 95" class="idpnt" >x39</text>
-   <text x="328"  y="116" class="idpnt" >x40</text>
+   <text x="301"  y=" 95" class="idpnt" >x156</text>
+   <text x="328"  y="116" class="idpnt" >x157</text>
 
-   <text x="680"  y=" 70" class="idpnt" >x26</text>
-   <text x="705"  y=" 95" class="idpnt" >x27</text>
+   <text x="680"  y=" 70" class="idpnt" >x164</text>
+   <text x="705"  y=" 95" class="idpnt" >x165</text>
 
-   <text x="650"  y="110" class="idpnt" >x28</text>
-   <text x="685"  y="123" class="idpnt" >x29</text>
+   <text x="650"  y="110" class="idpnt" >x166</text>
+   <text x="685"  y="123" class="idpnt" >x167</text>
 
-   <text x="630"  y="140" class="idpnt" >x30</text>
-   <text x="670"  y="145" class="idpnt" >x31</text>
+   <text x="630"  y="140" class="idpnt" >x168</text>
+   <text x="670"  y="145" class="idpnt" >x169</text>
 
-   <text x="625"  y="170" class="idpnt" >x32</text>
-   <text x="665"  y="170" class="idpnt" >x33</text>
+   <text x="625"  y="170" class="idpnt" >x170</text>
+   <text x="665"  y="170" class="idpnt" >x171</text>
 
-   <text x="685"  y="185" class="idpnt" >x34</text>
-   <text x="660"  y="210" class="idpnt" >x35</text>
+   <text x="685"  y="185" class="idpnt" >x172</text>
+   <text x="660"  y="210" class="idpnt" >x173</text>
 
-   <text x="645"  y="365" class="idpnt" >x52</text>
-   <text x="645"  y="330" class="idpnt" >x53</text>
+   <text x="645"  y="365" class="idpnt" >x176</text>
+   <text x="645"  y="330" class="idpnt" >x177</text>
 
-   <text x="310"  y="365" class="idpnt" >x50</text>
-   <text x="310"  y="330" class="idpnt" >x51</text>
+   <text x="310"  y="365" class="idpnt" >x174</text>
+   <text x="310"  y="330" class="idpnt" >x175</text>
 
 <!--    
   blue main line loop
@@ -347,6 +345,19 @@ You can use it like:
         L  820  345  L  750 345  L 700 395 L 400 395
         " class="trackg"
     />
+    <line               x1="430" y1="405" x2="580" y2="405" class="platform" />
+
+    <text                x="475"   y="387"        class="idtrk"   >t21</text>
+    <text                x="510"   y="387"        class="idctl"   >c52</text>    
+
+    <text                x="475"   y="490"        class="idtrk"   >t23</text>
+    <text                x="510"   y="490"        class="idctl"   >c54</text>   
+    
+    <text                x="175"   y="340"        class="idtrk"   >t28</text>
+    <text                x="105"   y="435"        class="idctl"   >c55</text>    
+    <text                x="775"   y="340"        class="idtrk"   >t31</text>
+    <text                x="840"   y="435"        class="idctl"   >c56</text>    
+     
 <!--    
   blue station loop
 -->     
@@ -354,6 +365,9 @@ You can use it like:
         M  650  470  L 600  445 L 375 445 L  325 470
         " class="trackg"
     />
+    <line               x1="430" y1="435" x2="580" y2="435" class="platform" />
+    <text                x="475"   y="463"        class="idtrk"   >t22</text>
+    <text                x="510"   y="463"        class="idctl"   >c53</text>    
 <!--    
   blue refuelling spur
 -->     
@@ -361,7 +375,8 @@ You can use it like:
         M  425  445  L 375  420 L 300 420
         " class="trackg"
     />
-<!--    
+    <text                x="305"   y="435"        class="idtrk"   >t27</text>
+    <text                x="340"   y="435"        class="idctl"   >c51</text>    
 
 <!--    
   red main line loop
@@ -375,6 +390,18 @@ You can use it like:
         L  820  300  L  750 300  L 690 350 L 400 350
         " class="trackr"
     />
+    <line               x1="430" y1="340" x2="580" y2="340" class="platform" />
+
+    <text                x="475"   y="365"        class="idtrk"   >t20</text>
+    <text                x="510"   y="365"        class="idctl"   >c40</text>    
+
+    <text                x="475"   y="515"        class="idtrk"   >t24</text>
+    <text                x="510"   y="515"        class="idctl"   >c57</text>
+
+    <text                x="175"   y="315"        class="idtrk"   >t29</text>
+    <text                x=" 45"   y="435"        class="idctl"   >c58</text>    
+    <text                x="775"   y="315"        class="idtrk"   >t30</text>
+    <text                x="900"   y="435"        class="idctl"   >c59</text>    
 
 <!--    
   red station loop
@@ -383,6 +410,11 @@ You can use it like:
         M  650  520  L 600  545 L 375 545 L  325 520
         " class="trackr"
     />
+    <line               x1="430" y1="553" x2="580" y2="553" class="platform" />
+
+    <text                x="475"   y="540"        class="idtrk"   >t25</text>
+    <text                x="510"   y="540"        class="idctl"   >c49</text>    
+    
 <!--    
   red refuelling spur
 -->     
@@ -390,6 +422,9 @@ You can use it like:
         M  425  545  L 375  570 L 300 570
         " class="trackr"
     />
+    <text                x="305"   y="585"        class="idtrk"   >t26</text>
+    <text                x="340"   y="585"        class="idctl"   >c50</text>    
+
 <!--    
   red blue crossover
 -->     
@@ -418,9 +453,9 @@ You can use it like:
       </p>
       <p>
       <!-- <input type="checkbox" id="id_howto_chkbox" onclick="do_chkbox_click('id_howto')" > How Tos -->
-      <input type="checkbox" id="id_ident_chkbox" onclick="do_chkbox_click('id_ident')" > Identifiers
+      <input type="checkbox" id="id_ident_chkbox" onclick="do_chkbox_click('id_ident')" > Labels
       <input type="checkbox" id="id_deltas_chkbox" onclick="do_chkbox_click('id_deltas')" > Recent Changes
-      <input type="checkbox" id="id_changes_chkbox" onclick="do_chkbox_click('id_changes')" > Previous Changes
+      <!-- <input type="checkbox" id="id_changes_chkbox" onclick="do_chkbox_click('id_changes')" > Previous Changes -->
       </p>
       <p>
       <a href="https://hmrs.org.au">HMRS web site</a>&nbsp
@@ -478,9 +513,11 @@ You can use it like:
    <div id="id_ident_window" style="text-align:center; display:none;" >
        <div style="text-align:left; display:inline-block;" >
            <h4>
-               Identifiers
+               Labels
            </h4>
            <pre>
+
+Where practical, labels which users see and quote are kept to two digits.
 
 t1    blk track through
 t2    blk track passing loop
@@ -499,27 +536,29 @@ c13   blk switch isolates t4
 c15   blk switch isolates t5
 c18   blk switch isolates t8
 c19   blk switch isolates t9
-x20   blk point  t5 t1 t2 dead end down ramp
-x21   blk point  t5 t4    dead end down ramp
-x22   blk point  t5 t7
-x23   blk point  t7 t5
-x24   blk point  t5 towards t7
-x25   blk point  t5 to t9
-x26   blk point  access t43
-x27   blk point  access t44
-x28   blk point  access t43 t44
-x29   blk point  access t45
-x30   blk point  access mine west
-x31   blk point  access mine east
-x32   blk point  access t46
-x33   blk point  access t47 t48
-x34   blk point  access t47
-x35   blk point  access t48
+
+t20   red track platform 1
+t21   blu track platform 2
+t22   blu track platform 3
+t23   blu track east main
+t24   red track east main
+t25   red track platform 4
+t26   red track goods siding
+t27   blu track south siding 
+t28   blu track inner main south
+t29   red track outer main south
+t30   red track outer main north
+t31   blu track inner main north
+c32   blk switch isolates t42
+ 33
+ 34
+c35   blk switch isolates t7
 c36   blk switch isolates t43 t44
 c37   blk switch isolates t45 t46
 c38   blk switch isolates t47 t48
-x39   blk point access siding t41
-x40   blk point access siding t42
+ 39
+c40   red switch isolates t20
+
 t41   blk track siding power station
 t42   blk track siding town
 t43   blk track siding mine
@@ -528,41 +567,39 @@ t45   blk track siding mine
 t46   blk track siding mine
 t47   blk track siding mine
 t48   blk track siding mine
- 49   
-x50   red point t9
-x51   red point t9
-x52   red point t8
-x53   red point t8
-
-x54   blk point t5 to t6
-x55   blk point t5 to t3 t41 t42
-x56   blk point t5 to t3 
-x57   blk point x55 to t41 t42
-x58   blk point t5 t1
-x59   blk point t5 t2
-x60   blk point t3 t1
-x61   blk point t3 t2
- <!--
+c49   red switch isolates t25
+c50   red switch isolates t26
+c51   blu switch isolates t27
+c52   blu switch isolates t21
+c53   blu switch isolates t22
+c54   blu switch isolates t23
+c55   blu switch isolates t28
+c56   blu switch isolates t31
+c57   red switch isolates t24
+c58   red switch isolates t29
+c59   red switch isolates t30
+ 60
+ 61
+ 62
+ 63
+ 64
  
-k62   blk break t5 t6
-k63   blk break t5 t3
-k64   blk break t5 t41
-k65   blk break t5 t42
-k66   blk break t6 t8
-
- 67   blk break t3 t1
- 68   blk break t3 t2
- 69   blk break t5 t1
- 70   blk break t5 t2
- 71   blk break t5 t4
- 72   blk break t5 t9
- 73   blk break t5 t7
- 74   blk break t7 t43
- 75   blk break t7 t44
- 76   blk break t7 t45
- 77   blk break t7 t46
- 78   blk break t7 t47
- 79   blk break t7 t48
+  <!--
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
  80
  81
  82
@@ -584,8 +621,7 @@ k66   blk break t6 t8
  98
  99
   -->
-        </pre>
-        <pre>
+
       tag strips rung A
        upper   lower
 j100    +ve     -ve  track raw 12VDC PSU
@@ -636,26 +672,79 @@ j143
 j144  
 j145  
 j146  
-j147  outer  inner   t9   Brown
-j148                 t8   Green
-j149                 t42  Black
-j150                 t41  Red
-j151                 t3   Yellow
-j152                 t2   Blue
-j153                 t1   White
-j154                 t5   Orange
-j155  outer  inner   t6   Brown
-        </pre>
-        <pre>
- 156
- 157
- 148
- 159
- 160
+j147  blk outer  inner   t9   Brown
+j148  blk                t8   Green
+j149  blk                t42  Black
+j150  blk                t41  Red
+j151  blk                t3   Yellow
+j152  blk                t2   Blue
+j153  blk                t1   White
+j154  blk                t5   Orange
+j155  blk outer  inner   t6   Brown
+
+x156  blk point access siding t41
+x157  blk point access siding t42
+x158  blk point  t5 t1 t2 dead end down ramp
+x159  blk point  t5 t4    dead end down ramp
+x160  blk point  t5 t7
+x161  blk point  t7 t5
+x162  blk point  t5 towards t7
+x163  blk point  t5 to t9
+x164  blk point  access t43
+x165  blk point  access t44
+x166  blk point  access t43 t44
+x167  blk point  access t45
+x168  blk point  access mine west
+x169  blk point  access mine east
+x170  blk point  access t46
+x171  blk point  access t47 t48
+x172  blk point  access t47
+x173  blk point  access t48
+
+x174  red point t9
+x175  red point t9
+x176  red point t8
+x177  red point t8
+
+x178  blk point t5 to t6
+x179  blk point t5 to t3 t41 t42
+x180  blk point t5 to t3 
+x181  blk point x179 to t41 t42
+x182  blk point t5 t1
+x183  blk point t5 t2
+x184  blk point t3 t1
+x185  blk point t3 t2
+
+k186  blk break t5 t3
+k187  blk break t5 t6
+k188  blk break t6 t8
+k189  blk break t5 t42
+k190  blk break t5 t9
+k191  blk break t20 t9
+k192  blk break t20 t8
+k193  blk break t5 t1
+k194  blk break t5 t2
+k195  blk break t3 t1
+k196  blk break t3 t2
+k197  blk break t5 t4
+k198  blk break t7 t7
+k199  blk break t7 t43
+k200  blk break t7 t44
+k201  blk break t7 t45
+k202  blk break t7 t46
+k203  blk break t7 t47
+k204  blk break t7 t48
+k205  blk break t5 t41
+
+ 206
+ 207
+ 208
+ 209
+ 210
        </pre>
 
     </div>
-
+<!--
     <div class="page-break"></div>  
     <div style="text-align:left; display:inline-block;" >
         <pre>
@@ -692,6 +781,7 @@ Z Other     (anything without another letter designator)
 
            </pre>
        </div>
+-->
    </div> <!-- id_ident_window -->
    <div id="id_deltas_window" style="text-align:center; display:none;" >
        <div style="text-align:left; display:inline-block;" >
@@ -699,6 +789,9 @@ Z Other     (anything without another letter designator)
                Recent Changes
            </h4>
            <p>This a summary: detail files are on github <a href="https://github.com/HillsModelRailwaySociety/">here</a> </p>
+           <p>
+           IRH0022 rewire black tracks to new jumper block.  Remove unused switches from black control panel update labels
+           </p>
            <p>
            IRH0020 move html to web accessible repository at https://hillsmodelrailwaysociety.github.io/HMRS_IronHill.html
            </p>
