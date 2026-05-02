@@ -554,7 +554,7 @@ You can use it like:
          <!--   <tr><td> - </td> <td> - </td> <td> - </td> </tr> -->
   </div> <!-- div_howto-container -->
 
-   <div id="id_ident_window" style="text-align:center; display:none;" >
+   <div id="id_ident_window" style="text-align:left; display:none;" >
        <div style="text-align:left; display:inline-block;" >
            <h4>
                Labels
@@ -665,13 +665,17 @@ c59   red switch isolates t30
  98
  99
   -->
-
+      </pre>
+    </div>
+  <div class="page-break"></div>
+  <div style="text-align:left; display:inline-block;" >
+      <pre>
       tag strips rung A
        upper   lower
 j100    +ve     -ve  track raw 12VDC PSU
 j101    +ve     -ve  blk controller raw DC in
 j102    +ve     -ve  blk controller rail DC out
-j103
+j103    +ve     -ve  points PSU 12VDC
 j104  
 j105  
 j106  
@@ -695,8 +699,7 @@ j123
 j124  
 j125  
 j126  
-j127 
- 
+j127
 j128  
 j129  
 j130  
@@ -709,22 +712,28 @@ j136
 j137  
 j138  
 j139  
-j140  
-j141  
-j142  
-j143  
-j144  
-j145  
-j146  
-j147  blk outer  inner   t9   Brown
-j148  blk                t8   Green
-j149  blk                t42  Black
-j150  blk                t41  Red
-j151  blk                t3   Yellow
-j152  blk                t2   Blue
-j153  blk                t1   White
-j154  blk                t5   Orange
-j155  blk outer  inner   t6   Brown
+j140  blk                t48  Red     to c38
+j141  blk                t47  Green   to c38
+j142  blk                t46  Black   to c37
+j143  blk                t45  Orange  to c37
+j144  blk                t44  Blue    to c36
+j145  blk                t43  Yellow  to c36
+j146  blk                t7   Brown   to c35
+j147  blk outer  inner   t9   Brown   to c19
+j148  blk                t8   Green   to c18
+j149  blk                t42  Black   to c30
+j150  blk                t41  Red     to c32
+j151  blk                t3   Yellow  to c28
+j152  blk                t2   Blue    to c11
+j153  blk                t1   White   to c10
+j154  blk                t5   Orange  to c15
+j155  blk outer  inner   t6   Brown   to c12
+ 
+</pre>
+    </div>
+  <div class="page-break"></div>
+  <div style="text-align:left; display:inline-block;" >
+<pre>
 
 x156  blk point access siding t41
 x157  blk point access siding t42
