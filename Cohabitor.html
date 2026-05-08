@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+
+<style>
+.idtrk    { fill:black;  font-size:10; visibility:visible; }
+.idpnt    { fill:blue;   font-size:10; visibility:visible; }
+.iddet    { fill:green;  font-size:10; visibility:visible; }
+.idsig    { fill:tomato; font-size:10; visibility:visible; }
+.idnod    { fill:darkblue; font-size:10; visibility:visible; }
+.idtst    { fill:black;                visibility:visible; }
+.idrun    { fill:darkviolet;           visibility:visible; }
+.track    {                        stroke:black;            stroke-width:3  }
+.tr1      {                        stroke:green;            stroke-width:3  }
+.tr2      {                        stroke:tomato;           stroke-width:3  } 
+.signal   { fill:rgb(224,224,224); stroke:tomato;           stroke-width:3  } 
+.pntarm   {                        stroke:black;            stroke-width:1  } 
+.lscliff  { fill:brown;            stroke:brown;            stroke-width:6; } 
+h4        { padding-left: 2%; font-weight: bold;}
+p         { padding-left: 4%; }
+ul        { padding-left: 8%; }
+/* .lscliff  {                        stroke:brown;            stroke-width:4; stroke-dasharray: 2 2; } */
+
+</style>
+
+<title> The Cohabitor </title>
+</head>
+<!-- <body onload="on_load()"> -->
+<body>
+<div id="id_body-container" class="w3-container w3-margin">
+  <div class="w3-panel w3-margin w3-pale-blue"><h1>The Cohabitor</h1></div>
+  <!-- 
+  <div class="w3-row w3-margin" style="margin:auto;text-align:center;">
+
+    <a id="id_data1"  style="background-color:tomato"       class="w3-btn w3-border w3-border-red w3-round-xxlarge" href="http://192.168.0.110/:557:313" target="_blank" >Raw Data</a>
+    <a id="id_data2"  style="background-color:tomato"       class="w3-btn w3-border w3-border-red w3-round-xxlarge" href="http://192.168.0.110/:557:311" target="_blank" >Log Text</a>
+    <a id="id_data3"  style="background-color:tomato"       class="w3-btn w3-border w3-border-red w3-round-xxlarge" href="http://192.168.0.110/:557:314" target="_blank" >Labels</a>
+  </div>
+  <div id="id_labelwindow" class="w3-row w3-margin" style="margin:auto;text-align:center;display:block" >
+    <a id="id_labeltext" > Configuration will load at first refresh </a>
+  </div>
+  -->
+  <div id="id_svg_container" class="w3-row w3-margin">
+  <svg id="id_box" viewBox="0 0 1000 600" >
+  <rect x="0" y="0" width="1000" height="600" style="fill:lightgray" />
+  <!-- elements fixed visibility -->
+  <!--
+  <line    x1="000" y1="137" x2="700"  y2="137"    class="lscliff" />
+
+  <line    x1="300" y1="190" x2="1000" y2="190"    class="lscliff" />
+
+  <line    x1="300" y1="350" x2="1000" y2="350"    class="lscliff" />   
+
+  <line    x1="000" y1="290" x2="700"  y2="290"    class="lscliff" />   
+ -->
+  <!-- track sections  -->
+  <text              x=" 30"  y=" 20"                      class="id1"  >two tracks joined by two points with isolated track</text>
+
+  <line id="id_t01" x1="050" y1="060" x2="400" y2="060"    class="tr1" />
+  <text              x="060"  y="050"                      class="idtrk">t01</text>
+  <line id="id_t02" x1="500" y1="060" x2="950" y2="060"    class="tr1"  />
+  <text              x="930"  y="050"                      class="id1"  >t02</text>
+
+  <line id="id_t03" x1="500" y1="100" x2="550" y2="100"    class="track"  />
+  <text              x="500"  y="085"                      class="idtrk" >t03</text>
+  
+  <line id="id_t04" x1="050" y1="140" x2="550" y2="140"    class="tr2"  />
+  <text              x="060"  y="130"                      class="idtrk" >t04</text>
+  <line id="id_t05" x1="650" y1="140" x2="950" y2="140"    class="tr2"   />
+  <text              x="930"  y="130"                      class="idtrk" >t05</text>
+
+  <line id="id_p08" x1="400" y1="060" x2="500" y2="060"    class="pntarm" /> 
+  <text              x="430"  y="050"                      class="idpnt" >p08</text>
+  <line id="id_p09" x1="400" y1="060" x2="500" y2="100"    class="pntarm" /> 
+  <text              x="430"  y="095"                      class="idpnt" >p09</text>
+  <line id="id_p10" x1="550" y1="140" x2="650" y2="140"    class="pntarm" /> 
+  <text              x="605"  y="110"                      class="idpnt" >p10</text> 
+  <line id="id_p11" x1="650" y1="140" x2="550" y2="100"    class="pntarm" />
+  <text              x="605"  y="165"                      class="idpnt" >p11</text>
+
+  <text              x=" 30"  y="185"                      class="id1"  >two tracks joined by one set of points with isolated track</text>
+
+  <line id="id_t04" x1="050" y1="280" x2="550" y2="280"    class="tr2"  />
+  <text              x="060"  y="260"                      class="idtrk" >t12</text>
+  <line id="id_t05" x1="650" y1="280" x2="950" y2="280"    class="tr2"   />
+  <text              x="930"  y="270"                      class="idtrk" >t13</text>
+  <line id="id_t05" x1="050" y1="220" x2="450" y2="220"    class="tr1"   />
+  <text              x="060"  y="210"                      class="idtrk" >t14</text>
+
+  <line id="id_p15" x1="550" y1="220" x2="650" y2="280"    class="pntarm" /> 
+  <text              x="605"  y="245"                      class="idpnt" >p15</text> 
+  <line id="id_p16" x1="550" y1="280" x2="650" y2="280"    class="pntarm" /> 
+  <text              x="605"  y="295"                      class="idpnt" >p16</text> 
+
+  <line id="id_b33" x1="450" y1="220" x2="460" y2="220"    class="pntarm" /> 
+  <line id="id_t06" x1="460" y1="220" x2="550" y2="220"    class="track" />
+  <text              x="500"  y="210"                      class="idtrk" >t17</text>
+
+  <text              x=" 30"  y="330"                      class="id1"  >two tracks joined by a section of isolated track</text>
+
+  <line id="id_t06" x1="050" y1="370" x2="450" y2="370"    class="tr1"   />
+  <text              x="250"  y="360"                      class="idtrk" >t06</text>
+  <line id="id_b33" x1="450" y1="370" x2="460" y2="370"    class="pntarm" /> 
+ <!-- <text              x="450"  y="360"                      class="idpnt" >b33</text> -->
+  <line id="id_t06" x1="460" y1="370" x2="550" y2="370"    class="track" />
+  <text              x="500"  y="360"                      class="idtrk" >t07</text>
+  <line id="id_b33" x1="550" y1="370" x2="560" y2="370"    class="pntarm" /> 
+<!--  <text              x="550"  y="360"                      class="idpnt" >b33</text> -->
+  <line id="id_t06" x1="560" y1="370" x2="950" y2="370"    class="tr2"   />
+  <text              x="700"  y="360"                      class="idtrk" >t08</text>
+
+  <text              x=" 30"  y="430"                      class="id1"  >two tracks joined in two places by two points each with isolated track</text>
+  
+  <!-- track sections  -->
+  <line id="id_t01" x1="050" y1="465" x2="350" y2="465"    class="tr1" />
+  <text              x="060"  y="455"                      class="idtrk">t18</text>
+  <line id="id_t02" x1="700" y1="465" x2="950" y2="465"    class="tr1"  />
+  <text              x="930"  y="455"                      class="id1"  >t20</text>
+  <line id="id_t02" x1="450" y1="465" x2="600" y2="465"    class="tr1"  />
+  <text              x="530"  y="455"                      class="id1"  >t19</text>
+
+  <line id="id_t03" x1="300" y1="505" x2="350" y2="505"    class="track"  />
+  <text              x="300"  y="490"                      class="idtrk" >t21</text>
+  <line id="id_t03" x1="700" y1="505" x2="750" y2="505"    class="track"  />
+  <text              x="700"  y="490"                      class="idtrk" >t22</text>
+  
+  <line id="id_t04" x1="050" y1="545" x2="200" y2="545"    class="tr2"  />
+  <text              x="060"  y="535"                      class="idtrk" >t23</text>
+  <line id="id_t05" x1="850" y1="545" x2="950" y2="545"    class="tr2"   />
+  <text              x="930"  y="535"                      class="idtrk" >t25</text>
+  <line id="id_t05" x1="300" y1="545" x2="750" y2="545"    class="tr2"   />
+  <text              x="530"  y="535"                      class="idtrk" >t24</text>
+
+  <line id="id_p08" x1="200" y1="545" x2="300" y2="545"    class="pntarm" /> 
+  <text              x="230"  y="570"                      class="idpnt" >p26</text>
+  <line id="id_p09" x1="200" y1="545" x2="300" y2="505"    class="pntarm" /> 
+  <text              x="230"  y="510"                      class="idpnt" >p27</text>
+  <line id="id_p11" x1="450" y1="465" x2="350" y2="505"    class="pntarm" />
+  <text              x="405"  y="505"                      class="idpnt" >p28</text> 
+  <line id="id_p10" x1="350" y1="465" x2="450" y2="465"    class="pntarm" /> 
+  <text              x="405"  y="453"                      class="idpnt" >p29</text>
+
+  <line id="id_p08" x1="600" y1="465" x2="700" y2="465"    class="pntarm" /> 
+  <text              x="630"  y="453"                      class="idpnt" >p30</text>
+  <line id="id_p09" x1="600" y1="465" x2="700" y2="505"    class="pntarm" /> 
+  <text              x="630"  y="500"                      class="idpnt" >p31</text>
+  <line id="id_p10" x1="750" y1="545" x2="850" y2="545"    class="pntarm" /> 
+  <text              x="805"  y="515"                      class="idpnt" >p32</text> 
+  <line id="id_p11" x1="850" y1="545" x2="750" y2="505"    class="pntarm" />
+  <text              x="805"  y="570"                      class="idpnt" >p33</text>
+  
+  
+  
+  <!--
+  <circle id="id_s28" cx="025"  cy="040" r="10" class="signal" />
+  <text                x="040"   y="045"        class="idsig" >s28-30</text>
+  <circle id="id_s31" cx="025"  cy="150" r="10" class="signal" />
+  <text                x="040"   y="155"        class="idsig" >s31-33</text>
+  <circle id="id_s34" cx="025"  cy="260" r="10" class="signal" />
+  <text                x="040"   y="265"        class="idsig" >s34-36</text>
+  <circle id="id_s37" cx="975"  cy="040" r="10" class="signal" />
+  <text                x="905"   y="045"        class="idsig" >s37-39</text>
+  <circle id="id_s40" cx="975"  cy="150" r="10" class="signal" />
+  <text                x="905"   y="155"        class="idsig" >s40-42</text>
+  <circle id="id_s43" cx="975"  cy="260" r="10" class="signal" />
+  <text                x="905"   y="265"        class="idsig" >s43-45</text>
+  -->  
+  
+  
+  </svg>
+  
+  </div> <!-- id_svg_container -->
+  
+   <div id="id_tag_window" style="text-align:center; padding-left: 3%;" >
+   <p style="text-align:left;">revision CHB0003</p>
+       <div style="text-align:left; display:inline-block; " >
+           <h3>
+               One Track: the Mode-Key
+           </h3>
+           <p>
+               The mode-key addresses the case where it is desired to allow the track power and control of one track to be selected to be either DC or DCC in a safe manner.
+               <br><br>
+               This might be one track of several on a layout or it might be an entire layout.
+               <br><br>
+               It is desired to allow the track to be easily switched between DC and DCC, but 
+                <ul>
+                <li>to have a clear and unmistakable visual indication of which state the track is in, visible at least from all the likely operating positions and fiddle yards; and
+                <li>to make it difficult to switch between DC and DCC inadvertently or without operators noticing.
+                </ul>
+           </p>           
+           <p>
+               This is a achieved by means of a mode-key.<br>
+               <ul>
+               <li>The mode-key is a suitable plug which can be inserted into a socket with only one orientation.
+               <li>There are two sockets far apart on the layout. 
+               <li>When the mode-key is plugged into one socket, the track is configured for DC. When it is plugged into the other, The layout is configured for DCC.  When the mode-key is removed (or two mode-keys are detected), power is removed.
+               <li>To change between DC and DCC, the operator removes any powered models, agrees with any others using the track, then unplugs the mode-key from one end of the layout, carries it to the other end, confirms there is no powered model on the track, and plugs it into the other socket.
+               </ul>
+           </p>           
+           <p>
+                In practice, the mode-key is built into a billboard, building or other piece of scenery such that its location and orientation serve to make it clear which mode is selected.
+                <br><br>
+                For example, the mode-key might be built into a billboard with a DCC label and symbol (square wave) on one side and a DC label and symbol (battery) on the other.
+                When plugged into the DC socket, the DC symbol is facing the operating position.
+                When plugged into the DCC socket, the DCC symbol is facing the operating position.
+                <br><br>
+                The two sockets should be far enough apart that an operator has to walk between them, and preferably past other operators, when changing modes.  This gives
+                <ul>
+                    <li> a period of downtime during a mode change;
+                    <li> a visual alert of the change to other operators; and
+                    <li> a reinforced visual indication of the mode choice once the mode-key is in positon.
+                </ul>
+           </p>           
+           <p>
+                There is no limit to the number of tracks which can be accommodated: each track will have its own mode-key and two sockets.  The mode-keys should be keyed so that they are unique to the track: it should not be possible to use one track mode-key in another track's socket.
+           </p>   
+           
+                <h3>
+               Two Tracks: the Cohabitor
+           </h3>
+           <p>
+               The Cohabitor addresses the case where a layout has multiple tracks, at least one is controlled by mode-key as above, and there is a rail connection between two tracks to allow trains to pass between them.  
+                <br><br>
+                In this case it is desired to make it difficult to inadvertently drive a train from a DC track to a DCC track or vice versa.
+               <br><br>
+               The Cohabitor controls the intersection between the two tracks to prevent trains running between them when they 
+               have different power schemes, but to allow traffic to pass freely when they have the same scheme.
+               <br><br>
+               Three different track intersections are accommodated.
+               <ul>
+                   <li>The two tracks are joined by two points which allow traffic to cross between
+                    the tracks when the points are set appropriately; or
+                   <li>The two tracks are joined by an isolating section and one set of points on one of the tracks; or
+                   <li>The two tracks meet with an isolating section between them.
+                   <li>The isolating section must be long enough to ensure that a running locomotive runs out of power and stops before it reaches the other track section. 
+               </ul>
+           </p>           
+           <p>
+               The Cohabitor controls:
+               <ul>
+                   <li>the switching of power to the isolated track sections
+                   <li>the position of the point(s) permitting traffic between the two tracks
+               </ul>
+               </p>
+               <p>
+               The <b>Crossover</b> button sets the tracks to allow traffic to pass between them.
+               The <b>Separated</b> button isolates the two tracks so traffic will not pass between them.
+               <br><br>
+               If the device detects that the tracks are using different systems or polarity, it sets
+               the intersection to <b>Separated</b> to prevent trains moving between the two tracks.
+           </p>
+           <h3>
+               For a user
+           </h3>
+
+           <h4> The Controls </h4>
+           <p>
+           <p>
+               Tracks for which mode is selectable will have a mode-key.  It may be that the layout has other tracks which are fixed DC or DCC. 
+           </p>
+           <p>
+               On the control panel (or at a suitable location) there will be two illuminated buttons, one marked <b>Separated</b> and the other <b>Crossover</b>.
+           </p>
+           <p>
+               There may also be a small display panel (LEDs) which shows the state of each track and other information.
+           </p>
+           <p>
+               The points and/or isolated section in the protected intersection are controlled by the Cohabitor.  It replaces any previous points controls and isolation switches for these items.
+           </p>
+           </p>
+           <h4> To Run DCC </h4>
+           <p>
+               <ul>
+               <li> Confer and verify that there are no powered models on the track you wish to use.
+               <li> If the mode-key is in the DC position, unplug it and plug it in to the DCC position.
+               <li> Place your own loco on the track.
+               <li> Use the DCC handset to control your train as usual.
+               </ul>
+           </p>           
+
+           <h4> To Run DC </h4>
+           <p>
+               <ul>
+               <li> Confer and verify that there are no powered models on the track you wish to use.
+               <li> If the mode-key is in the DCC position, unplug it and plug it in to the DC position.
+               <li> Place your own loco on the track.
+               <li> Use the DC controller handset to control your train as usual.
+               </ul>
+           </p>   
+                       
+           <h4> To Cross between Tracks </h4>
+           <p>
+               <ul>
+                   <li>Verify that the other track is in the desired state (DC or DCC).
+                   <li>Press the <b>Crossover</b> button.  The Crossover and Separated buttons will blink for a few seconds.
+                   <li>If it is safe,
+                       <ul>
+                           <li>the points will be set to cross between tracks;
+                           <li>the isolating track section will be powered from the selected track supply;
+                           <li>the buttons will stop blinking and <b>Crossover</b> button will stay lit.
+                        </ul>
+                   <li>If it is not safe,
+                       <ul>
+                           <li>the points will remain in a safe state (trains cannot cross between tracks);
+                           <li>the isolating track section will be unpowered;
+                           <li>the buttons will stop blinking and the <b>Separated</b> button will remain lit.
+                      </ul>
+               </ul>
+               
+            </p>
+ 
+           <h4> To Use the Tracks Separately </h4>
+           <p>
+                   Press the <b>Separated</b> button.  The Crossover and Separated buttons will blink for a few seconds.
+                       <ul>
+                           <li>the buttons will stop blinking and the <b>Separated</b> button will remain lit.
+                           <li>the points will change to the safe (separated) state (trains cannot cross between tracks)
+                           <li>the track section will be isolated.
+                      </ul>
+            </p>           
+           <p> 
+               Each track can be operated with its usual controller, either DC or DCC depending on the state set by the mode-key.<br>
+               Also, the power state can be changed at will as described above.
+           </p>
+           <h4> Other Situations </h4>
+           <p> 
+               If the Cohabitor detects the two tracks are different systems or different polarity then it will switch to <b>Separated</b> mode (tracks not connected). It will behave as if the Separated button had been pressed.
+           </p>
+           
+           <h3>
+               More Detail
+           </h3>
+           <p>
+               The Cohabitor accommodates four different track layouts, as discussed above:
+               <ul>
+                   <li> Two tracks which run in parallel, and have two points which can be set for either separated or crossover traffic; or
+                   <li> Two tracks which are joined by a isolating section and a set of points on one of the tracks; or
+                   <li> Two tracks which meet end to end, with an isolating section in between; or
+                   <li> Two tracks which are joined in two places, each with two points and an isolating section, so four sets of points and two isolating sections in total.
+                   </ul>
+           </p>           
+           <p>               
+              For two tracks which run in parallel:
+               <ul>
+                   <li> When it detects that power on both sides is compatible (a train can pass safely between them) then:
+                        <ul>
+                            <li>  An operator can use the <b>Separated</b> and <b>Crossover</b> buttons to control the two points so that trains can pass in either direction.
+                        </ul>
+                   <li> When it detects that power on the two track is not compatible, then:
+                        <ul>
+                            <li> It drives both points to the <b>Separated</b> position; and
+                            <li> It ignores the <b>Separated</b> and <b>Crossover</b> buttons.
+                        </ul>
+                </ul> 
+           </p>           
+           <p>
+               For two tracks which meet end to end at an isolating section:             
+               <ul>
+                   <li> When it detects that compatible power is on both sides (as in, a train can pass safely between) then:
+                        <ul>
+                            <li>It closes two relays which connect the isolating section to one of the tracks.  Trains can pass in either direction.
+                            <li>The <b>Separated</b> and <b>Crossover</b> buttons can be used to isolate and reconnect the isolating track section.
+                        </ul>
+                   <li> When it detects that power on the two track is not compatible, then it will behave as if the Separated button had been pressed.
+                </ul>     
+           </p>           
+           <p>
+               The device can also accommodate the situation where two tracks are joined in two places (as shown in graphic above).  Here there are two sets of points an two isolated section but the same logic applies.     
+           </p>     
+           <p>      
+              It is assumed that each DC track will have its own DC controller supplying power.
+           </p>           
+           <p>
+              It is assumed that the layout (of several tracks) will have one DCC booster supplying all tracks, so that the DCC supply will always be the correct phase.
+           </p>           
+           <p>
+              The points and other accessories of the layout can be controlled by DCC or by DC and switched or any other mean: this doesn't affect which power is used for the track.
+           </p>           
+
+           <h3>
+               Track, Layout and Operating Considerations
+           </h3>
+           <p>
+               Where an isolating section is used, it only offers safe isolation if it is long enough to ensure that a running locomotive runs out of power and stops before it reaches the other track section.
+           </p>           
+           <p>
+               Where there are tracks with different power schemes, it should be difficult for an operator to inadvertently put a train onto a track with an unexpected or unknown power mode.  To achieve this:
+               <ul>
+                 <li>The fiddle yards should not be colocated.  The fiddle yards for each track should be in different locations so that it is difficult to inadvertently place an item on a track with the wrong power mode.
+                 <li>The mode-key should be clearly visible from the fiddle yard and all likely operating positions.
+                 <li>Operators should adopt the practice, that if they have to remove an item from the track, for example after a train break, derailment or collision, that they ALWAYS take it back to the fiddle yard for re-railing and NEVER replace it on the rails at the location of the incident or elsewhere 'in the field'.  This reduces the risk of inadvertently placing an item on the wrong rail.
+               </ul>
+           </p>           
+           <p>
+               Operators may find it helpful, when using a track in <b>Separated</b> mode, to place an item on the isolated track section an a visual reminder that the path is blocked.
+           </p>           
+           <p>
+               Operators should adopt the practice of removing the mode-key when powering off the layout after use, and putting the key in a known location, for example on the fiddle yard tracks.  This will:
+               <ul>
+               <li>make it obvious to the next operator that they need to choose the mode they require; and
+               <li>avoid the possibility that the next operator does not check, and assumes the track is in a certain power mode.  If there is no mode-key detected then the track will be unpowered.
+               </ul>
+           </p>           
+           <p>
+               It is assumed that if there are multiple tracks on a layout, and some are DCC, that the same DCC booster will be used for the selectable tracks also.  Therefore DCC supply will always be in the correct phase.  Models running between two tracks will expect to see the same phase.
+           </p>
+           <p>
+               Normal DCC configuration discipline applies when models are operated using DCC.  For example, consists should be deconfigured before putting a model away.
+           </p>
+
+           <h3>
+               Implementation
+           </h3>
+           <p>
+               The logic required is simple and in principle could be implemented using microswitches and relays.
+           </p>           
+           <p>
+               The Cohabitor device has connections for
+               <ul>
+                 <li>12VDC input (for its electronics);
+                 <li>DC track power input (the output of the DC track controller);
+                 <li>DCC track power input (the output of the booster or power CAB);
+                 <li>point solenoid supply input (AC or DC);
+                 <li>input contacts for the two mode-key sockets and the Separated and Crossover push buttons;
+                 <li>output for the Separated and Crossover LEDs (ideally in the pushbuttons, but separate LEDs can be used);
+                 <li>output to the tracks (Track A, Track Isol); and
+                 <li>outputs for each point solenoid, a maximum of eight in total.
+               </ul>
+           </p>           
+           <p>
+                These connections are brought out via two 25-pin connectors, one for input & control functions and one for track & points connections.
+           </p>           
+           <p>
+                It also has a display and keypad for monitoring, testing and configuration, which does not need to be visible or accessible to train operators.
+           </p>
+           <p>
+           <pre>
+                        control connector           power connector
+                               unused 101           201 layout points supply (AC/DC)
+              Track A mode-key-DC +   102           202 unused
+              Track A mode-key-DC -   103           203 points coil track A through /sept
+              Track A mode-key-DCC +  104           204 points coil track A divert to B /xover 
+              Track A mode-key-DCC -  105           205 points coil track B  through /sept
+          Track A Crossover button +  106           206 points coil track B divert to A  /sept
+          Track A Crossover button -  107           207 points coil track A 2 through/sept
+                 Track A Xover LED +  108           208 points coil track A 2 divert /xover
+                 Track A Xover LED -  109           209 points coil track B 2 through/sept
+           Track A Separate button +  110           210 points coil track B 2 divert / xover 
+           Track A Separate button -  111           211 unused
+                  Track A Sept LED +  112           212 Track A + out to track
+                  Track A Sept LED -  113           213 Track A -
+                               unused 114           214 unused
+                               unused 115           215 Track Isol + out to track
+                               unused 116           216 Track Isol -
+                               unused 117           217 unused
+                             0V DC in 118           218 Track Isol 2 + out to track
+                            12V DC in 119           219 Track Isol 2 -
+                               unused 120           220 unused
+                               unused 121           221 DC + in from controller
+                               unused 122           222 DC - in
+                               unused 123           223 unused
+                               unused 124           224 DCC+ in from controller
+                               unused 125           225 DCC- in 
+ 
+           Point solenoids are assumed connected to supply return/ground at the other end.
+           Pins 103, 105, 107, 109, 111, 113 are connected internally to pin 118.
+           These connections are aligned to allow easy use of pair cable to connect switches & LEDs.
+           Pins 108, 112 provide a current supply to illuminate a LED
+           Pin pairs 102, 103 et al are normally open, that is activated when closed.
+                       
+           </pre>
+           </p>
+       </div>
+   </div> <!-- id_tag_window -->
+  
+</div> <!-- id_body-container -->
+
+</body>
+</html>
