@@ -44,7 +44,7 @@ You can use it like:
 <!-- <body onload="on_load()"> -->
 <body>
 <div id="id_body-container" class="w3-container w3-margin">
-  <div class="w3-panel w3-margin w3-pale-blue"><h2>HMRS Iron Hill &nbsp&nbsp&nbsp&nbsp (rev IRH0026)</h2></div>
+  <div class="w3-panel w3-margin w3-pale-blue"><h2>HMRS Iron Hill &nbsp&nbsp&nbsp&nbsp (rev IRH0028)</h2></div>
   <!-- 
   <div class="w3-row w3-margin" style="margin:auto;text-align:center;">
 
@@ -91,7 +91,7 @@ You can use it like:
     <line               x1="250" y1="165" x2="200" y2="195" class="platform" />
     <text                x="200"  y=" 50"         class="idtrk"   >t3</text>
     <text                x="235"  y=" 50"         class="idctl"   >c28</text>
-    <text                x="250"  y="200"         class="idtrk"   >t3</text>
+    <text                x="240"  y="205"         class="idtrk"   >t3</text>
 
 <!-- t5  -->
  
@@ -263,7 +263,7 @@ You can use it like:
     <text                 x="710"  y="235"         class="idbrk"   >k204</text>
 
     
-    <text                x="555"  y="165"         class="idpnt"   >x160</text>
+    <text                x="550"  y="165"         class="idpnt"   >x160</text>
     <text                x="570"  y="185"         class="idpnt"   >x161</text>
 
     <text                x="800"  y=" 48"         class="idtrk"   >t43</text>
@@ -478,6 +478,19 @@ You can use it like:
     <path d="M  300  350 L  350 325  " class="trackr"  />
     <path d="M  675  350 L  625 325  " class="trackr"  />
 
+<!--    
+  dead end points ex turntable near blk station
+-->     
+
+    <path d="
+        M 280  175
+        L 265  165
+        " class="trackb"
+    />
+
+   <text x="255"  y="160" class="idpnt" >x222</text>
+   <text x="255"  y="190" class="idpnt" >x223</text>
+
   </svg>
   
   </div> <!-- id_svg_container -->
@@ -671,13 +684,13 @@ c59   red switch isolates t30
   <div style="text-align:left; display:inline-block;" >
       <pre>
       tag strips rung A
-       upper   lower
-j100    +ve     -ve  track raw 12VDC PSU
-j101    +ve     -ve  blk controller raw DC in
-j102    +ve     -ve  blk controller rail DC out
-j103    +ve     -ve  points PSU 12VDC
-j104  
-j105  
+       upper          lower
+j100    +ve            -ve    track raw 12VDC PSU
+j101    +ve            -ve    blk controller raw DC in
+j102    +ve            -ve    blk controller rail DC out
+j103                          unused (guard space)
+j104    stripe         black  points PSU 18VAC
+j105                          unused (guard space)
 j106  
 j107  
 j108  
@@ -692,20 +705,20 @@ j116
 j117  
 j118  
 j119  
-j120  
-j121  
-j122  
-j123  
-j124  
-j125  
-j126  
-j127
+j120  x159               x158   points motor solenoid coils
+j121  x183               x182
+j122  x161               x160
+j123  x164               x165
+j124  x167               x166
+j125  x173               x172
+j126  x178               x179
+j127  x180               x181
 j128  
-j129  
-j130  
-j131  
-j132  
-j133  
+j129  x169               x168
+j130  x163               x162
+j131  x156               x157
+j132  x222               x223  dead end (ex turntable) points near south station
+j133  x185               x184
 j134  
 j135  
 j136  
@@ -806,8 +819,8 @@ k219  blu break t22 t27 blue siding
 k220  red break t20 t21 red-blu crossover
 k221  blu break t20 t21 red-blu crossover
 
- 222
- 223
+x222  blk point t3 near station unused 
+x223  blk point t3 near station unused 
  224
  225
  226
