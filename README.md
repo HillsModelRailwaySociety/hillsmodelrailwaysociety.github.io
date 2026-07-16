@@ -1,16 +1,3 @@
 # hillsmodelrailwaysociety.github.io
-<html>
 
-Hills Model Railway Society: <a href="https://hmrs.org.au"> https://hmrs.org.au </a>
-
-github home: https://github.com/HillsModelRailwaySociety
-
-Iron Hill map & changelog: https://hillsmodelrailwaysociety.github.io/HMRS_IronHill.html
-
-Iron Hill change details: https://github.com/HillsModelRailwaySociety/HMRS_IronHill
-
-Club N DC change details: https://github.com/HillsModelRailwaySociety/HMRS_NDC
-
-Cohabitor notes: https://hillsmodelrailwaysociety.github.io/Cohabitor.html
-
-</html>
+go here -> https://hillsmodelrailwaysociety.github.io/index.html
