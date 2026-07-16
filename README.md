@@ -8,3 +8,5 @@ Iron Hill map & changelog: https://hillsmodelrailwaysociety.github.io/HMRS_IronH
 Iron Hill change details: https://github.com/HillsModelRailwaySociety/HMRS_IronHill
 
 Club N DC change details: https://github.com/HillsModelRailwaySociety/HMRS_NDC
+
+Cohabitor notes: https://hillsmodelrailwaysociety.github.io/Cohabitor.html
