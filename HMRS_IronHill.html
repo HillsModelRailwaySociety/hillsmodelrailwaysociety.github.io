@@ -44,7 +44,7 @@ You can use it like:
 <!-- <body onload="on_load()"> -->
 <body>
 <div id="id_body-container" class="w3-container w3-margin">
-  <div class="w3-panel w3-margin w3-pale-blue"><h2>HMRS Iron Hill &nbsp&nbsp&nbsp&nbsp (rev IRH0031)</h2></div>
+  <div class="w3-panel w3-margin w3-pale-blue"><h2>HMRS Iron Hill &nbsp&nbsp&nbsp&nbsp (rev IRH0033)</h2></div>
   <!-- 
   <div class="w3-row w3-margin" style="margin:auto;text-align:center;">
 
@@ -619,8 +619,8 @@ t29   red track outer main south
 t30   red track outer main north
 t31   blu track inner main north
 c32   blk switch isolates t42
- 33
- 34
+c33   blk-red illuminated button Separated / Two Loops 
+c34   blk-red illuminated button Crossover / Figure 8 
 c35   blk switch isolates t7
 c36   blk switch isolates t43 t44
 c37   blk switch isolates t45 t46
@@ -647,8 +647,8 @@ c56   blu switch isolates t31
 c57   red switch isolates t24
 c58   red switch isolates t29
 c59   red switch isolates t30
- 60
- 61
+c60   blk switch selects DC/DCC A end
+c61   blk switch selects DC/DCC B end
  62
  63
  64
@@ -841,10 +841,70 @@ x223  blk point t3 near station unused
  227
  228
  229
- 230
+ 
+     Cohabitor control connector
+
+j230  101 unused  
+j231  102 Track A Mode-Tablet-DC + 
+j232  103 Track A Mode-Tablet-DC -  
+j233  104 Track A Mode-Tablet-DCC + 
+j234  105 Track A Mode-Tablet-DCC - 
+j235  106 Track A Crossover button + 
+j236  107 Track A Crossover button - 
+j237  108 Track A Xover LED + 
+j238  109 Track A Xover LED - 
+j239  110 Track A Separate button +  
+j240  111 Track A Separate button -  
+j241  112 Track A Sept LED + 
+j242  113 Track A Sept LED -  
+j243  114 unused 114 
+j244  115 unused 115 
+j245  116 unused 116
+j246  117 unused 117  
+j247  118 0V DC in 118 
+j248  119 12V DC in 119 
+j249  120 unused 120 
+j250  121 unused 121 
+j251  122 unused 122  
+j252  123 unused 123 
+j253  124 unused 124 
+j254  125 unused 125 
+
+     Cohabitor  power connector
+
+j255 201 layout points supply (AC/DC)
+j256 202 unused
+j257 203 points coil track A 1 through /sept
+j258 204 points coil track A 1 divert to B /xover 
+j259 205 points coil track B 1 through /sept
+j260 206 points coil track B 1 divert to A  /sept
+j261 207 points coil track A 2 through/sept
+j262 208 points coil track A 2 divert /xover
+j263 209 points coil track B 2 through/sept
+j264 210 points coil track B 2 divert / xover 
+j265 211 unused
+j266 212 Track A + out to track
+j267 213 Track A -
+j268 214 unused
+j269 215 Track Isol + out to track
+j270 216 Track Isol -
+j271 217 unused
+j272 218 Track Isol 2 + out to track
+j273 219 Track Isol 2 -
+j274 220 unused
+j275 221 DC + in from controller
+j276 222 DC - in
+j277 223 unused
+j278 224 DCC+ in from controller
+j279 225 DCC- in 
+
+
+ 280
  
        </pre>
-
+       <pre>
+            _ .... .   . -. -..   
+       </pre>
     </div>
 <!--
     <div class="page-break"></div>  
