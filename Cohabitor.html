@@ -536,6 +536,33 @@ ul        { padding-left: 8%; }
                        
            </pre>
            </p>
+           <h4>Display Messages</h4>
+           <p>
+                Messages are displayed on the top line of the LCD display.
+           </p>
+           <div >
+           <table style="margin-left: auto; margin-right: auto; width:80%;">
+           <tr><th>Message</th> <th style="width:80%"> Meaning </th></tr>
+           <tr><td>initialising</td><td>The controller is running power on checks.</td></tr>
+           <tr><td>manual</td><td>The controller is awaiting keypad commands.</td></tr>
+           <tr><td>operating</td><td>The controller is in normal mode waiting button or tablet changes.</td></tr>
+           <tr><td>separated</td><td>Tracks are separated. Points have been set to prevent traffic between track A and track B, and no power is applied to isolated section(s).</td></tr>
+           <tr><td>crossover</td><td>Tracks are set to route traffic between track A and track B.  Points are set to route traffic from track A to track B and vice versa.  The isolated section(s) are powered from track A.</td></tr>
+           <tr><td>separating</td><td>The controller is changing the tracks to separated state.</td></tr>
+           <tr><td>crossing over</td><td>The controller is changing the tracks to crossover state.</td></tr>
+           <tr><td>switching</td><td>A request has been made to change between crossover and separated traffic, and the controller is working.</td></tr>
+           <tr><td>miscount tokens</td><td>The tokens or switches selecting between DC and DCC are inconsistent.  There are too many or not enough or they are inconsistent.  The tracks wil go to separated state for safety.</td></tr>
+           <tr><td>test (name)</td><td>The controller is in the requested test state.</td></tr>
+           <tr><td>swfault</td><td>The controller has stopped due to a software error.  The second line will indicate the fault code.  Record this number.</td></tr>
+           <tr><td>-</td><td>-</td><td>-</td></tr>
+           </table>
+           </div>
+           <p>
+                When no keypad command is being entered, the bottom line of the LCD display wil cycle through various configuration information.
+           </p>
+
+           
+           </p>
            <h4>Keypad Commands</h4>
            <p>
                 While the device is not switching (leds blinking alternately), the keypad can be used to enter commands for test modes and to change settings.
@@ -552,11 +579,11 @@ ul        { padding-left: 8%; }
            <tr><th>&nbsp Code &nbsp</th> <th style="width:20%"> &nbsp</th> <th colspan="2">Action</th></tr>
            <tr><td>123</td><td>manual</td><td>Put in separated state then await manual commands.  Will not respond to buttons or tablets. Intended for use when testing & setting up.</td></tr>
            <tr><td>124</td><td>operating</td><td>Normal operating mode.  Use after completing test & setup.  Unit normally starts in this mode when switched on.</td></tr>
-           <tr><td>125</td><td>test leds</td><td>Flash LEDs in sequence.</td></tr>
-           <tr><td>126</td><td>test swfault</td><td>Throws a swfault.  Device will need to be switched off and then on to resume operation.</td></tr>
-           <tr><td>127</td><td>test relays</td><td>Activate each relay in order.  Be cautious if track or switch motor power is connected, the relays will make whatever connections are wired up.</td></tr>
-           <tr><td>128</td><td>test buttons</td><td>The display will indicate which button has been pressed or tablet has been moved.</td></tr>
-           <tr><td>129</td><td>test points</td><td>Set each point set in each direction in sequence.</td></tr>
+           <tr><td>125</td><td>test leds</td><td>Flash LEDs in sequence. Set manual mode to stop.</td></tr>
+           <tr><td>126</td><td>test swfault</td><td>Throws a swfault 1191.  Device will need to be switched off and then on to resume operation.</td></tr>
+           <tr><td>127</td><td>test relays</td><td>Activate each relay in order.  Be cautious if track or switch motor power is connected, the relays will make whatever connections are wired up. Set manual mode to stop</td></tr>
+           <tr><td>128</td><td>test buttons</td><td>The display will indicate which button has been pressed or tablet has been moved. Set manual mode to stop</td></tr>
+           <tr><td>129</td><td>test points</td><td>Set each point set in each direction in sequence. Set manual mode to stop</td></tr>
            <tr><td>-</td><td>-</td><td>-</td></tr>       
            <tr><td>268</td><td>Startup manual</td><td>On startup, enter manual mode</td></tr>
            <tr><td>269</td><td>Startup operating</td><td>On startup, enter operating mode</td></tr>
@@ -597,6 +624,19 @@ ul        { padding-left: 8%; }
            <tr><td>247</td><td>B assume DC</td><td>Set track B to assume DC, ignore tablet</td></tr>
            <tr><td>248</td><td>B assume DCC</td><td>Set track B to assume DCC, ignore tablet</td></tr>
            <tr><td>249</td><td>B assume tablet</td><td>Set track B to read tablet for power state</td></tr>
+           <tr><td>-</td><td>-</td><td>-</td></tr>
+           <tr><td>364</td><td>keypad lock on</td><td>Ignore keypad inputs (prevent inadvertent operation) until unlocked</td></tr>
+           <tr><td>365</td><td>keypad lock off</td><td>Act on keypad inputs</td></tr>
+           <tr><td>-</td><td>-</td><td>-</td></tr>
+           <tr><td>371</td><td>A tablet_DCC_NO</td><td>track A tablet switch DCC is sensed as normally open, active closed</td></tr>
+           <tr><td>372</td><td>A tablet_DCC_NC</td><td>track A tablet switch DCC is sensed as normally closed, active open</td></tr>
+           <tr><td>374</td><td>A tablet_DC_NO</td><td>track A tablet switch DC is sensed as normally open, active closed</td></tr>
+           <tr><td>375</td><td>A tablet_DC_NC</td><td>track A tablet switch DC is sensed as normally closed, active open</td></tr>
+           <tr><td>367</td><td>B tablet_DCC_NO</td><td>track B tablet switch DCC is sensed as normally open, active closed</td></tr>
+           <tr><td>368</td><td>B tablet_DCC_NC</td><td>track B tablet switch DCC is sensed as normally closed, active open</td></tr>
+           <tr><td>369</td><td>B tablet_DC_NO</td><td>track B tablet switch DC is sensed as normally open, active closed</td></tr>
+           <tr><td>362</td><td>B tablet_DC_NC</td><td>track B tablet switch DC is sensed as normally closed, active open</td></tr>
+           <tr><td>-</td><td>-</td><td>-</td></tr>
 
            </table>
            </div>
