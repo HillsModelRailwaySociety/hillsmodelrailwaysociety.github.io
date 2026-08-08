@@ -61,7 +61,9 @@ You can use it like:
   Service Status: Layout working on DC. Switches and indicators for DCC/DC operation are being installed.  They are not yet functional.
   </p>
   <p>
-  Most recent change: IRH0035 added labels for connections to Cohabitor DCC/DC switch
+  Recent changes:<br>
+  IRH0036 wired in breakout panel & update html label list for connections
+  IRH0035 added labels for connections to Cohabitor DCC/DC switch
   </p>
   </div>
   
@@ -725,11 +727,11 @@ j114
 j115  
 j116  
 j117  
-j118  
-j119  
-j120  x159 yellow        x158 black   (points motor solenoid coils
-j121  x183 orange        x182 white   (points common goes to j104 lower
-j122  x161 blue          x160 brown   (actuate by momentary contact from j104 upper to tag listed here
+j118  x175               x174
+j119  x177               x176                
+j120  x159 yellow        x158 black   (points motor solenoid coils)
+j121  x183 orange        x182 white   (points common goes to j104 lower)
+j122  x161 blue          x160 brown   (actuate by momentary contact from j104 upper to tag listed here)
 j123  x164 red           x165 blue
 j124  x167 green         x166 orange
 j125  x173 black         x172 green
@@ -746,7 +748,7 @@ j135  spare orange       spare black
 j136  
 j137  
 j138  
-j139  
+j139  blk outer  inner   bussbar connects t1,2,3,5,6,7,41-48 (excl t8, t9)      
 j140  blk                t48  Red     to c38
 j141  blk                t47  Green   to c38
 j142  blk                t46  Black   to c37
@@ -887,29 +889,29 @@ j257  NC
 j258 225 DCC- in 
 j259 224 DCC+ in from controller
 j260 223 unused
-j261 222 DC - in
-j262 221 DC + in from controller
+j261 222 DC - in                          (to j102 lower)
+j262 221 DC + in from controller          (to j102 upper)
 j263 220 unused
-j264 219 Track Isol 2 -
-j265 218 Track Isol 2 + out to track
+j264 219 Track Isol 2 -                   (to j147 lower)
+j265 218 Track Isol 2 + out to track t9   (to j147 upper)
 j266 217 unused
-j267 216 Track Isol -
-j268 215 Track Isol + out to track
+j267 216 Track Isol -                     (to j148 lower)
+j268 215 Track Isol + out to track  t8    (to j148 upper)
 j269 214 unused
-j270 213 Track A -
-j271 212 Track A + out to track
+j270 213 Track A -                        (to j139 lower)
+j271 212 Track A + out to track           (to j139 upper)
 j272 211 unused
-j273 210 points coil track B 2 divert / xover 
-j274 209 points coil track B 2 through/sept
-j275 208 points coil track A 2 divert /xover
-j276 207 points coil track A 2 through/sept
-j277 206 points coil track B 1 divert to A  /sept
-j278 205 points coil track B 1 through /sept
-j279 204 points coil track A 1 divert to B /xover 
-j280 203 points coil track A 1 through /sept
+j273 210 points coil track B 2 xover x175 (red    to j118 upper)  
+j274 209 points coil track B 2 sept  x174 (orange to j118 lower)
+j275 208 points coil track A 2 xover x163 (blue   to j130 upper)
+j276 207 points coil track A 2 sept  x162 (green  to j130 lower)
+j277 206 points coil track B 1 xover x177 (yellow to j119 upper)
+j278 205 points coil track B 1 sept  x176 (white  to j119 lower)
+j279 204 points coil track A 1 xover x178 (brown  to j126 upper)
+j280 203 points coil track A 1 sept  x179 (black  to j126 lower)
 j281 202 unused
-j282 201 layout points supply (AC/DC)
-j283 NC  layout points supply (GND, unused on this board)
+j282 201 layout points supply active (AC/DC) (to j104 upper)
+j283 NC  layout points supply common         (to j104 lower)
 j284 NC
 j285 NC
 
