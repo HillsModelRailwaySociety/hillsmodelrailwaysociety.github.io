@@ -21,6 +21,13 @@
 h4        { padding-left: 2%; font-weight: bold;}
 p         { padding-left: 4%; }
 ul        { padding-left: 8%; }
+
+@media print {
+  /* Prevent text paragraphs, list items, and headings from splitting */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-before: always;
+  }
+}
 /* .lscliff  {                        stroke:brown;            stroke-width:4; stroke-dasharray: 2 2; } */
 
 </style>
@@ -210,7 +217,7 @@ ul        { padding-left: 8%; }
   </div> <!-- id_svg_container -->
   
    <div id="id_tag_window" style="text-align:center; padding-left: 3%;" >
-       <p style="text-align:left;">revision TC0014</p>
+       <p style="text-align:left;">revision TC0016</p>
        <div style="text-align:left; display:inline-block; " >
            <h3>
                One Track: Selector Switches
@@ -503,19 +510,19 @@ ul        { padding-left: 8%; }
            <p>
            <pre>
                         control connector           layout connector
-                               unused 101           201 layout points supply (AC/DC)
-                Track A select-DC +   102           202 unused
-                Track A select-DC -   103           203 points coil track A 1 through /sept
-                Track A select-DCC +  104           204 points coil track A 1 divert to B /xover 
-                Track A select-DCC -  105           205 points coil track B 1 through /sept
-          Track A Crossover button +  106           206 points coil track B 1 divert to A  /sept
-          Track A Crossover button -  107           207 points coil track A 2 through/sept
-                 Track A Xover LED +  108           208 points coil track A 2 divert /xover
-                 Track A Xover LED -  109           209 points coil track B 2 through/sept
-           Track A Separate button +  110           210 points coil track B 2 divert / xover 
-           Track A Separate button -  111           211 unused
-                  Track A Sept LED +  112           212 Track A + out to track
-                  Track A Sept LED -  113           213 Track A -
+                Track A select-DC  +  101           201 layout points supply (AC/DC)
+                Track A select-DC  -  102           202 unused
+                Track A select-DCC +  103           203 points coil track A 1 through /sept
+                Track A select-DCC -  104           204 points coil track A 1 divert to B /xover 
+          Track A Crossover button +  105           205 points coil track B 1 through /sept
+          Track A Crossover button -  106           206 points coil track B 1 divert to A  /sept
+                 Track A Xover LED +  107           207 points coil track A 2 through/sept
+                 Track A Xover LED -  108           208 points coil track A 2 divert /xover
+           Track A Separate button +  109           209 points coil track B 2 through/sept
+           Track A Separate button -  110           210 points coil track B 2 divert / xover 
+                  Track A Sept LED +  111           211 unused
+                  Track A Sept LED -  112           212 Track A + out to track
+                               unused 113           213 Track A -
                                unused 114           214 unused
                                unused 115           215 Track Isol + out to track
                                unused 116           216 Track Isol -
