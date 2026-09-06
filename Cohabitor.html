@@ -217,7 +217,7 @@ ul        { padding-left: 8%; }
   </div> <!-- id_svg_container -->
   
    <div id="id_tag_window" style="text-align:center; padding-left: 3%;" >
-       <p style="text-align:left;">revision TC0016</p>
+       <p style="text-align:left;">revision TC0017</p>
        <div style="text-align:left; display:inline-block; " >
            <h3>
                One Track: Selector Switches
@@ -399,7 +399,7 @@ ul        { padding-left: 8%; }
                        <li>LEDs blinking alternately: the device is switching.  It will do this for a few seconds.
                        <li>Both LEDs on: the device is waking up and/or has not yet detected a selection.
                        <li>LEDs blinking at the same time: there is a problem, most likely the selector switches set to different positions.
-                       <li>Both LEDs off: the device started in manual mode and is waiting for a command.
+                       <li>Both LEDs off: the device started in test mode and is waiting for a command.
                    </ul>
                 </p>
                <p> 
@@ -552,7 +552,7 @@ ul        { padding-left: 8%; }
                <table style="margin-left: auto; margin-right: auto; width:80%;">
                    <tr><th>Message</th> <th style="width:80%"> Meaning </th></tr>
                    <tr><td>initialising</td><td>The controller is running power on checks.</td></tr>
-                   <tr><td>manual</td><td>The controller is awaiting keypad commands.</td></tr>
+                   <tr><td>testing</td><td>The controller is in test mode awaiting keypad commands.</td></tr>
                    <tr><td>operating</td><td>The controller is in normal mode waiting button or selector switch changes.</td></tr>
                    <tr><td>separated</td><td>Tracks are separated. Points have been set to prevent traffic between track A and track B, and no power is applied to isolated section(s).</td></tr>
                    <tr><td>crossover</td><td>Tracks are set to route traffic between track A and track B.  Points are set to route traffic from track A to track B and vice versa.  The isolated section(s) are powered from track A.</td></tr>
@@ -568,7 +568,6 @@ ul        { padding-left: 8%; }
            <p>
                 When no keypad command is being entered, the bottom line of the LCD display will cycle through various configuration information.
            </p>
-
            
            </p>
            <h4>Keypad Commands</h4>
@@ -580,7 +579,7 @@ ul        { padding-left: 8%; }
                 Some codes are used internally and will have no effect (those not listed below).
            </p>
            <p>
-                Test modes and some manual settings can only be entered from manual mode.  To run a test, select <b>manual</b> first then the required test mode.
+                Test modes and some manual settings can only be entered from test mode.  To run a test, select <b>testing</b> first then the required test mode.
            </p>
            <p>
                 These should be used with caution.  For example, 'test relays' powers on the relays in sequence and will have whatever effect they are wired to have.  Also, setting the track to 'assume DC' or 'assume DCC' instead of 'sel switches' may compromise the safety checks depending on how the layout is wired.
@@ -588,18 +587,18 @@ ul        { padding-left: 8%; }
            <div>
                <table style="margin-left: auto; margin-right: auto; width:80%;">
                    <tr><th>&nbsp Code &nbsp</th> <th style="width:20%"> &nbsp</th> <th colspan="2">Action</th></tr>
-                   <tr><td>123</td><td>manual</td><td>Put in separated state then await manual commands.  Will not respond to buttons or switches. Intended for use when testing & setting up.</td></tr>
+                   <tr><td>123</td><td>testing</td><td>Put in separated state then await test commands.  Will not respond to buttons or switches. Intended for use when testing & setting up.</td></tr>
                    <tr><td>124</td><td>operating</td><td>Normal operating mode.  Use after completing test & setup.  Unit normally starts in this mode when switched on.</td></tr>
-                   <tr><td>125</td><td>test leds</td><td>Flash LEDs in sequence. Set manual mode to stop.</td></tr>
+                   <tr><td>125</td><td>test leds</td><td>Flash LEDs in sequence. Set testing mode to stop.</td></tr>
                    <tr><td>126</td><td>test swfault</td><td>Throws a swfault 1191.  Device will need to be switched off and then on to resume operation.</td></tr>
-                   <tr><td>127</td><td>test relays</td><td>Activate each relay in order.  Be cautious if track or switch motor power is connected, the relays will make whatever connections are wired up. Set manual mode to stop</td></tr>
-                   <tr><td>128</td><td>test buttons</td><td>The display will indicate which button has been pressed or switch has been moved. Set manual mode to stop</td></tr>
-                   <tr><td>129</td><td>test points</td><td>Set each point set in each direction in sequence. Set manual mode to stop</td></tr>
+                   <tr><td>127</td><td>test relays</td><td>Activate each relay in order.  Be cautious if track or switch motor power is connected, the relays will make whatever connections are wired up. Set testing mode to stop</td></tr>
+                   <tr><td>128</td><td>test buttons</td><td>The display will indicate which button has been pressed or switch has been moved. Set testing mode to stop</td></tr>
+                   <tr><td>129</td><td>test points</td><td>Set each point set in each direction in sequence. Set testing mode to stop</td></tr>
                    <tr><td>-</td><td>-</td><td>-</td></tr>       
                    <tr><td>132</td><td>Crossover</td><td>Same as pressing Crossover button</td></tr>
                    <tr><td>134</td><td>Separate</td><td>Same as pressing Separate button</td></tr>
                    <tr><td>-</td><td>-</td><td>-</td></tr>
-                   <tr><td>268</td><td>Startup manual</td><td>On startup, enter manual mode</td></tr>
+                   <tr><td>268</td><td>Startup testing</td><td>On startup, enter test mode</td></tr>
                    <tr><td>269</td><td>Startup operating</td><td>On startup, enter operating mode</td></tr>
                    <tr><td>-</td><td>-</td><td>-</td></tr>     
                    <tr><td>345</td><td>Isolate Isol 1</td><td>Isolate track Isol 1</td></tr>
@@ -658,7 +657,7 @@ ul        { padding-left: 8%; }
                     <ul>
                         <li>If they are connected, disconnect the Layout and Control connectors (25-pin IDC connectors).
                         <li>Connect power to the unit and switch on.
-                        <li>Using the keypad, select <b>manual</b> mode (keypad command 123#).
+                        <li>Using the keypad, select <b>test</b> mode (keypad command 123#).
                         <li>enter <b>test leds</b>
                         <li>Observe the illuminated pushbuttons on the unit.
                             <ul>
@@ -679,7 +678,7 @@ ul        { padding-left: 8%; }
                                 <li>Verify that all the buttons are indicated in the display when pressed, and none are missed.
                                 <li>if not, resolve before proceeding.
                             </ul>
-                        <li>select <b>manual</b> mode
+                        <li>select <b>test</b> mode
                         <li>Disconnect power.
                     </ul>
                </p>
@@ -689,7 +688,7 @@ ul        { padding-left: 8%; }
                         <li>If connected, disconnect the Layout connector.
                         <li>If not connected, connect the Control connector.
                         <li>Connect power to the unit and switch on.
-                        <li>enter <b>manual</b> mode.
+                        <li>enter <b>test</b> mode.
                         <li>enter <b>test buttons</b>
                         <li>Press the <b>Separate</b> and <b>Crossover</b> buttons on the layout and observe the display. 
                             <ul>
@@ -702,7 +701,7 @@ ul        { padding-left: 8%; }
                                 <li>Verify that the display indicates which mode is being selected at each location (DCC or DC).
                                 <li>if not, resolve before proceeding.
                             </ul>                     
-                        <li>select <b>manual</b> mode
+                        <li>select <b>test</b> mode
                         <li>Disconnect power.
                     </ul>
                </p>
@@ -712,7 +711,7 @@ ul        { padding-left: 8%; }
                         <li>If not connected, connect the Layout connector.
                         <li>The Control connector can be either connected or disconnected.
                         <li>Connect power to the unit and switch on.
-                        <li>enter <b>manual</b> mode.
+                        <li>enter <b>test</b> mode.
                         <li>test that each point motor moves back and forth
                             <ul>
                                 <li>enter <b>wobble point A1</b>.
@@ -738,7 +737,7 @@ ul        { padding-left: 8%; }
                                 <li>repeat for separate B2
                                 <li>if the points are not setting the expected direction, resolve before proceeding.
                             </ul>                     
-                        <li>select <b>manual</b> mode
+                        <li>select <b>test</b> mode
                         <li>Disconnect power.
                     </ul>
                </p>
@@ -751,7 +750,7 @@ ul        { padding-left: 8%; }
                         <li>Connect power to the unit and switch on.
                         <li>Adjust the DC track power to a medium value
                         <li>Switch on DCC power
-                        <li>enter <b>manual</b> mode.
+                        <li>enter <b>test</b> mode.
                         <li>enter <b>Isolate Trk A</b>
                         <li>Verify that no power is applied to track A
                         <li>enter <b>Power A DC</b>
@@ -773,7 +772,7 @@ ul        { padding-left: 8%; }
                         <li>Connect power to the unit and switch on.
                         <li>Adjust the DC track power to a medium value
                         <li>DCC power can be on or off
-                        <li>enter <b>manual</b> mode.
+                        <li>enter <b>test</b> mode.
                         <li>enter <b>Isolate Isol 1</b>
                         <li>Verify that no power is applied to track Isol 1
                         <li>enter <b>Power Isol 1</b>
@@ -802,7 +801,7 @@ ul        { padding-left: 8%; }
                         <li>If connected, disconnect the Layout connector.
                         <li>If not connected, connect the Control connector.
                         <li>Connect power to the unit and switch on.
-                        <li>enter <b>manual</b> mode.
+                        <li>enter <b>test</b> mode.
                         <li>set one selector switch in the DC position and the other in the DCC position.
                         <li>enter <b>operating</b> mode and wait for the display to indicate a state.
                         <li>Observe the pushbuttons, display, and relay module indicators.
@@ -828,7 +827,7 @@ ul        { padding-left: 8%; }
                         <li>Press the <b>Crossover</b> button.
                         <li>Verify that nothing happens.
                         <li>if the unit and display do not respond as described above, resolve before proceeding.
-                        <li>select <b>manual</b> mode
+                        <li>select <b>test</b> mode
                         <li>Disconnect power.
                     </ul>
                </p>
@@ -871,7 +870,7 @@ ul        { padding-left: 8%; }
                             <li>if not, resolve before proceeding.
                         </ul>
                         <li>Remove DC & DCC track power.
-                        <li>select <b>manual</b> mode.
+                        <li>select <b>test</b> mode.
                         <li>Disconnect power.
                     </ul>
                </p>
@@ -934,10 +933,11 @@ ul        { padding-left: 8%; }
                         </ul>                        
                         <li>if the unit and display do not respond as described above, resolve before proceeding.
                         <li>Remove DC & DCC track power.
-                        <li>select <b>manual</b> mode.
+                        <li>select <b>test</b> mode.
                         <li>Disconnect power.
                     </ul>
-               </p>               </p>
+               </p>  
+
            </div>
        </div>
        
